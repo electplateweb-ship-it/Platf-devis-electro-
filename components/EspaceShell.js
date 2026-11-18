@@ -69,7 +69,16 @@ export default function EspaceShell({ children }) {
     } catch {}
   }
 
-  const surParametres = chemin && chemin.startsWith("/parametres");
+  const courant = (debut) => (chemin && chemin.startsWith(debut) ? "page" : undefined);
+  const accueil = chemin === "/tableau-de-bord" ? "page" : undefined;
+
+  const icone = (children) => (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
+      strokeLinejoin="round" aria-hidden="true">
+      {children}
+    </svg>
+  );
 
   return (
     <ThemeContext.Provider value={{ preference, changer }}>
@@ -78,24 +87,35 @@ export default function EspaceShell({ children }) {
           <>
             {children}
             <nav className="barre" aria-label="Navigation principale">
-              <Link href="/tableau-de-bord"
-                aria-current={!surParametres ? "page" : undefined}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
-                  strokeLinejoin="round" aria-hidden="true">
+              <Link href="/tableau-de-bord" aria-current={accueil}>
+                {icone(<>
                   <path d="M3 11l9-8 9 8" />
                   <path d="M5 10v10h5v-6h4v6h5V10" />
-                </svg>
+                </>)}
                 Accueil
               </Link>
-              <Link href="/parametres"
-                aria-current={surParametres ? "page" : undefined}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
-                  strokeLinejoin="round" aria-hidden="true">
+              <Link href="/clients" aria-current={courant("/clients")}>
+                {icone(<>
+                  <circle cx="9" cy="8" r="3.2" />
+                  <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                  <circle cx="17" cy="9" r="2.5" />
+                  <path d="M17 14c2.5 0 4.5 2 4.5 4.5" />
+                </>)}
+                Clients
+              </Link>
+              <Link href="/catalogue" aria-current={courant("/catalogue")}>
+                {icone(<>
+                  <path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z" />
+                  <path d="M3 7.5L12 12l9-4.5" />
+                  <path d="M12 12v9" />
+                </>)}
+                Catalogue
+              </Link>
+              <Link href="/parametres" aria-current={courant("/parametres")}>
+                {icone(<>
                   <circle cx="12" cy="12" r="3" />
                   <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h0a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
-                </svg>
+                </>)}
                 Paramètres
               </Link>
             </nav>
@@ -106,4 +126,4 @@ export default function EspaceShell({ children }) {
       </div>
     </ThemeContext.Provider>
   );
-      }
+}
