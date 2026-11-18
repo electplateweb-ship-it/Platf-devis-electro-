@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
+import ChampMotDePasse from "../../components/ChampMotDePasse";
 
 export default function Inscription() {
   const router = useRouter();
@@ -82,8 +83,13 @@ export default function Inscription() {
           value={form.email} onChange={changer} />
 
         <label htmlFor="motdepasse">Mot de passe</label>
-        <input id="motdepasse" name="motdepasse" type="password" required
-          autoComplete="new-password" value={form.motdepasse} onChange={changer} />
+        <ChampMotDePasse
+          id="motdepasse"
+          name="motdepasse"
+          autoComplete="new-password"
+          value={form.motdepasse}
+          onChange={changer}
+        />
 
         <button className="bouton" type="submit" disabled={chargement}>
           {chargement ? "Création en cours…" : "Créer mon compte"}
@@ -98,4 +104,4 @@ export default function Inscription() {
       </p>
     </main>
   );
-    }
+          }
