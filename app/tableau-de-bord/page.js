@@ -107,7 +107,7 @@ function Contenu() {
 
       <div className="carte">
         <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
-        <p>Clients, catalogue de matériels, création des devis et PDF.</p>
+        <p>Création des devis, historique et génération du PDF.</p>
       </div>
     </main>
   );
@@ -119,4 +119,4 @@ export default function TableauDeBord() {
       <Contenu />
     </EspaceShell>
   );
-      }
+          }
