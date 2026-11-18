@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
+import ChampMotDePasse from "../../components/ChampMotDePasse";
 
 export default function Connexion() {
   const router = useRouter();
@@ -41,8 +42,13 @@ export default function Connexion() {
           value={email} onChange={(e) => setEmail(e.target.value)} />
 
         <label htmlFor="mdp">Mot de passe</label>
-        <input id="mdp" type="password" required autoComplete="current-password"
-          value={motdepasse} onChange={(e) => setMotdepasse(e.target.value)} />
+        <ChampMotDePasse
+          id="mdp"
+          name="motdepasse"
+          autoComplete="current-password"
+          value={motdepasse}
+          onChange={(e) => setMotdepasse(e.target.value)}
+        />
 
         <button className="bouton" type="submit" disabled={chargement}>
           {chargement ? "Connexion…" : "Me connecter"}
@@ -56,4 +62,4 @@ export default function Connexion() {
       </p>
     </main>
   );
-  }
+            }
