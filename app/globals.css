@@ -263,3 +263,33 @@ details p { margin: 10px 0 0; }
 
 .carte p { margin: 0 0 10px; }
 .carte p:last-child { margin-bottom: 0; }
+
+/* ============ Profil de l'établissement ============ */
+
+textarea { min-height: 90px; resize: vertical; line-height: 1.4; }
+
+.logo-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  padding: 14px;
+}
+.logo-zone img { max-width: 100%; max-height: 120px; object-fit: contain; }
+
+/* Aperçu "papier" : toujours blanc, même en mode sombre */
+.apercu-devis {
+  background: #ffffff;
+  color: #1c2430;
+  border: 1px solid var(--trait);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.apercu-ligne { display: flex; gap: 14px; align-items: flex-start; }
+.apercu-ligne img { max-width: 90px; max-height: 70px; object-fit: contain; flex-shrink: 0; }
+.apercu-ligne strong { font-size: 1.05rem; }
