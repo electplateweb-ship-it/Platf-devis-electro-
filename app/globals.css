@@ -1,0 +1,118 @@
+:root {
+  --encre: #14233c;
+  --fond: #f6f7f9;
+  --carte: #ffffff;
+  --trait: #d9dee6;
+  --texte: #1c2430;
+  --discret: #5d6878;
+  --accent: #f2b705;
+  --accent-fonce: #c99700;
+  --erreur: #b3261e;
+  --ok: #1e7a4c;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a { color: var(--encre); }
+
+.page {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+}
+
+.marque {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--encre);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.marque::before {
+  content: "";
+  width: 14px;
+  height: 22px;
+  background: var(--accent);
+  clip-path: polygon(60% 0, 0 58%, 42% 58%, 30% 100%, 100% 38%, 56% 38%);
+}
+
+h1 { font-size: 1.9rem; line-height: 1.15; margin: 28px 0 10px; color: var(--encre); }
+h2 { font-size: 1.25rem; margin: 24px 0 8px; color: var(--encre); }
+p.sous-titre { color: var(--discret); margin: 0 0 24px; }
+
+.carte {
+  background: var(--carte);
+  border: 1px solid var(--trait);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+label { display: block; font-weight: 600; margin: 14px 0 6px; }
+.optionnel { font-weight: 400; color: var(--discret); }
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--trait);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--texte);
+  font-family: inherit;
+}
+input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.bouton {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--encre);
+  cursor: pointer;
+}
+.bouton:hover { background: var(--accent-fonce); }
+.bouton:disabled { opacity: 0.6; cursor: wait; }
+
+.bouton.secondaire {
+  background: transparent;
+  color: var(--encre);
+  border: 1px solid var(--encre);
+}
+
+.message { margin-top: 14px; padding: 10px 12px; border-radius: 8px; font-size: 0.95rem; }
+.message.erreur { background: #fdecea; color: var(--erreur); }
+.message.ok { background: #e6f4ec; color: var(--ok); }
+
+.lien-bas { text-align: center; margin-top: 18px; color: var(--discret); }
+
+.adresse {
+  word-break: break-all;
+  background: var(--fond);
+  border: 1px dashed var(--trait);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+  }
