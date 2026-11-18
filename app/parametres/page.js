@@ -35,6 +35,13 @@ function Contenu() {
       {email && <p className="sous-titre">Connecté avec {email}</p>}
 
       <div className="carte">
+        <h2 style={{ marginTop: 0 }}>Mon établissement</h2>
+        <Link href="/parametres/profil" className="ligne-lien">
+          Profil, coordonnées et logo <span className="fleche">›</span>
+        </Link>
+      </div>
+
+      <div className="carte">
         <h2 style={{ marginTop: 0 }}>Apparence</h2>
         <div role="radiogroup" aria-label="Mode d'éclairage">
           {OPTIONS.map((o) => (
@@ -83,4 +90,4 @@ export default function Parametres() {
       <Contenu />
     </EspaceShell>
   );
-    }
+        }
