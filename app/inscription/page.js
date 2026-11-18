@@ -51,7 +51,7 @@ export default function Inscription() {
     }
 
     if (data.session) {
-      router.push("/tableau-de-bord");
+      router.push("/bienvenue");
     } else {
       setInfo(
         "Compte créé. Ouvrez le message de confirmation envoyé à votre adresse e-mail, puis connectez-vous."
@@ -104,4 +104,4 @@ export default function Inscription() {
       </p>
     </main>
   );
-          }
+    }
