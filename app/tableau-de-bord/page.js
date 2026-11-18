@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
+import EspaceShell from "../../components/EspaceShell";
 
-export default function TableauDeBord() {
+function Contenu() {
   const router = useRouter();
   const [etablissement, setEtablissement] = useState(null);
   const [erreur, setErreur] = useState("");
@@ -25,7 +26,7 @@ export default function TableauDeBord() {
         .eq("owner_id", user.id)
         .maybeSingle();
 
-      // Première visite : on crée l'établissement avec les infos de l'inscription
+      // Première visite : création avec les infos de l'inscription
       if (!etab) {
         const meta = user.user_metadata || {};
         const { data: cree, error } = await supabase
@@ -49,11 +50,6 @@ export default function TableauDeBord() {
     }
     charger();
   }, [router]);
-
-  async function deconnecter() {
-    await supabase.auth.signOut();
-    router.push("/");
-  }
 
   async function copierAdresse(adresse) {
     try {
@@ -98,14 +94,18 @@ export default function TableauDeBord() {
 
       <div className="carte">
         <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
-        <p style={{ margin: 0 }}>
+        <p>
           Profil et logo, clients, catalogue de matériels, création des devis et PDF.
         </p>
       </div>
-
-      <button className="bouton secondaire" onClick={deconnecter}>
-        Me déconnecter
-      </button>
     </main>
   );
-              }
+}
+
+export default function TableauDeBord() {
+  return (
+    <EspaceShell>
+      <Contenu />
+    </EspaceShell>
+  );
+      }
