@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
 import EspaceShell from "../../components/EspaceShell";
@@ -93,10 +94,20 @@ function Contenu() {
       </div>
 
       <div className="carte">
-        <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
+        <h2 style={{ marginTop: 0 }}>Mon profil</h2>
         <p>
-          Profil et logo, clients, catalogue de matériels, création des devis et PDF.
+          Ajoutez votre logo et vos coordonnées : ils apparaîtront sur vos devis.
         </p>
+        <Link href="/parametres/profil" className="bouton">
+          {etablissement.logo_path && etablissement.address
+            ? "Modifier mon profil"
+            : "Compléter mon profil"}
+        </Link>
+      </div>
+
+      <div className="carte">
+        <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
+        <p>Clients, catalogue de matériels, création des devis et PDF.</p>
       </div>
     </main>
   );
@@ -108,4 +119,4 @@ export default function TableauDeBord() {
       <Contenu />
     </EspaceShell>
   );
-      }
+            }
