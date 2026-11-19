@@ -206,7 +206,7 @@ input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible
   align-items: center;
   gap: 2px;
   padding: 10px 0;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--discret);
@@ -313,6 +313,8 @@ textarea { min-height: 90px; resize: vertical; line-height: 1.4; }
   color: var(--sur-accent);
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
 }
 .bouton-ajout:hover { background: var(--accent-fonce); }
 
@@ -334,6 +336,7 @@ input[type="search"] { margin-bottom: 14px; }
   font-family: inherit;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .element:hover { border-color: var(--accent); }
 .element .titre { font-weight: 700; color: var(--encre); }
@@ -354,3 +357,42 @@ input[type="search"] { margin-bottom: 14px; }
   border: 1px solid var(--erreur);
 }
 .bouton.danger:hover { background: var(--fond-erreur); }
+
+/* ============ Devis ============ */
+
+.etapes { display: flex; gap: 6px; margin: 16px 0 8px; }
+.etape { flex: 1; height: 6px; border-radius: 3px; background: var(--trait); }
+.etape.faite { background: var(--accent); }
+
+.grille-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.ligne-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--trait);
+}
+.ligne-total strong { text-align: right; color: var(--encre); }
+.ligne-total.grand { font-size: 1.1rem; border-bottom: 0; }
+
+.element.choisi { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+
+.boutons-etape { display: flex; gap: 12px; }
+.boutons-etape .bouton { flex: 1; width: auto; }
+
+.badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.b-brouillon { color: var(--discret); }
+.b-envoye { color: var(--accent); }
+.b-accepte { color: var(--ok); }
+.b-refuse { color: var(--erreur); }
