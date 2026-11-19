@@ -79,7 +79,7 @@ function Contenu() {
         Me déconnecter
       </button>
 
-      <p className="lien-bas">Version 0.4</p>
+      <p className="lien-bas">Version 0.5</p>
     </main>
   );
 }
@@ -90,4 +90,4 @@ export default function Parametres() {
       <Contenu />
     </EspaceShell>
   );
-    }
+      }
