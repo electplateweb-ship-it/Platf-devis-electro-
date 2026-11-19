@@ -94,6 +94,13 @@ function Contenu() {
       </div>
 
       <div className="carte">
+        <h2 style={{ marginTop: 0 }}>Devis</h2>
+        <p>Créez un devis pour un client, ou retrouvez vos devis précédents.</p>
+        <Link href="/devis/nouveau" className="bouton">Nouveau devis</Link>
+        <Link href="/devis" className="bouton secondaire">Voir mes devis</Link>
+      </div>
+
+      <div className="carte">
         <h2 style={{ marginTop: 0 }}>Mon profil</h2>
         <p>
           Ajoutez votre logo et vos coordonnées : ils apparaîtront sur vos devis.
@@ -107,7 +114,7 @@ function Contenu() {
 
       <div className="carte">
         <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
-        <p>Création des devis, historique et génération du PDF.</p>
+        <p>Génération du PDF, impression et partage par WhatsApp ou e-mail.</p>
       </div>
     </main>
   );
@@ -119,4 +126,4 @@ export default function TableauDeBord() {
       <Contenu />
     </EspaceShell>
   );
-          }
+}
