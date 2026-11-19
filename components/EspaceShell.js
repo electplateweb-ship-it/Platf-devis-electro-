@@ -94,6 +94,15 @@ export default function EspaceShell({ children }) {
                 </>)}
                 Accueil
               </Link>
+              <Link href="/devis" aria-current={courant("/devis")}>
+                {icone(<>
+                  <path d="M6 3h9l4 4v14H6z" />
+                  <path d="M14 3v5h5" />
+                  <path d="M9 13h7" />
+                  <path d="M9 17h7" />
+                </>)}
+                Devis
+              </Link>
               <Link href="/clients" aria-current={courant("/clients")}>
                 {icone(<>
                   <circle cx="9" cy="8" r="3.2" />
@@ -126,4 +135,4 @@ export default function EspaceShell({ children }) {
       </div>
     </ThemeContext.Provider>
   );
-}
+    }
