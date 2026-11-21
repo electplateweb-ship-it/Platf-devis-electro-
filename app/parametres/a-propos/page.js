@@ -24,13 +24,13 @@ export default function APropos() {
 
         <div className="carte">
           <h2 style={{ marginTop: 0 }}>Déjà disponible</h2>
-          <p>Inscription, connexion, adresse personnelle, mode clair ou sombre, profil et logo, clients, catalogue de matériels, création et historique des devis.</p>
+          <p>Inscription, connexion, adresse personnelle, mode clair ou sombre, profil et logo, clients, catalogue de matériels, création et historique des devis, PDF et partage, récupération d'accès.</p>
           <h2>Prochainement</h2>
-          <p>Génération du PDF, impression et partage par WhatsApp ou e-mail.</p>
+          <p>Espace d'administration de la plateforme.</p>
         </div>
 
-        <p className="lien-bas">Version 0.5</p>
+        <p className="lien-bas">Version 0.7</p>
       </main>
     </EspaceShell>
   );
-    }
+}
