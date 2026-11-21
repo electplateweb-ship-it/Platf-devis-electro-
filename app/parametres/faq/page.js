@@ -13,8 +13,9 @@ export default function Faq() {
             <summary>Où trouver mon adresse personnelle ?</summary>
             <p>
               Elle est affichée sur l'écran Accueil, avec un bouton pour la
-              copier. Gardez-la dans vos favoris ou envoyez-la-vous par
-              message.
+              copier. Si vous l'avez perdue, appuyez sur « Retrouver mon
+              espace » depuis la page d'accueil du site : après vérification
+              par un code envoyé par e-mail, elle s'affiche de nouveau.
             </p>
           </details>
 
@@ -55,8 +56,10 @@ export default function Faq() {
           <details>
             <summary>J'ai oublié mon mot de passe, que faire ?</summary>
             <p>
-              La récupération d'accès par code sera ajoutée prochainement. En
-              attendant, contactez l'administrateur de la plateforme.
+              Sur la page de connexion, appuyez sur « Mot de passe oublié ou
+              adresse perdue ? », entrez votre adresse e-mail puis le code
+              reçu, et choisissez un nouveau mot de passe. Vous pouvez aussi le
+              changer à tout moment dans Paramètres, puis Sécurité.
             </p>
           </details>
         </div>
