@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
@@ -12,6 +12,13 @@ export default function Connexion() {
   const [motdepasse, setMotdepasse] = useState("");
   const [erreur, setErreur] = useState("");
   const [chargement, setChargement] = useState(false);
+
+  // Déjà connecté (par exemple après le lien reçu par e-mail) : direction l'espace
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) router.replace("/tableau-de-bord");
+    });
+  }, [router]);
 
   async function envoyer(e) {
     e.preventDefault();
@@ -60,6 +67,9 @@ export default function Connexion() {
       <p className="lien-bas">
         Pas encore de compte ? <Link href="/inscription">Créer un compte</Link>
       </p>
+      <p className="lien-bas">
+        <Link href="/retrouver">Mot de passe oublié ou adresse perdue ?</Link>
+      </p>
     </main>
   );
-            }
+    }
