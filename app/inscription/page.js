@@ -36,6 +36,7 @@ export default function Inscription() {
       email: form.email.trim(),
       password: form.motdepasse,
       options: {
+        emailRedirectTo: `${window.location.origin}/bienvenue`,
         data: {
           etablissement: form.etablissement.trim(),
           responsable: form.responsable.trim(),
