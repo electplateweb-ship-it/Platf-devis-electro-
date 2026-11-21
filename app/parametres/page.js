@@ -63,6 +63,13 @@ function Contenu() {
       </div>
 
       <div className="carte">
+        <h2 style={{ marginTop: 0 }}>Sécurité</h2>
+        <Link href="/parametres/mot-de-passe" className="ligne-lien">
+          Changer mon mot de passe <span className="fleche">›</span>
+        </Link>
+      </div>
+
+      <div className="carte">
         <h2 style={{ marginTop: 0 }}>Informations</h2>
         <Link href="/parametres/a-propos" className="ligne-lien">
           À propos <span className="fleche">›</span>
@@ -79,7 +86,7 @@ function Contenu() {
         Me déconnecter
       </button>
 
-      <p className="lien-bas">Version 0.5</p>
+      <p className="lien-bas">Version 0.7</p>
     </main>
   );
 }
