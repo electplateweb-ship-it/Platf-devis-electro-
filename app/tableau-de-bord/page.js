@@ -112,10 +112,6 @@ function Contenu() {
         </Link>
       </div>
 
-      <div className="carte">
-        <h2 style={{ marginTop: 0 }}>Bientôt disponible</h2>
-        <p>Génération du PDF, impression et partage par WhatsApp ou e-mail.</p>
-      </div>
     </main>
   );
 }
@@ -126,4 +122,4 @@ export default function TableauDeBord() {
       <Contenu />
     </EspaceShell>
   );
-}
+      }
