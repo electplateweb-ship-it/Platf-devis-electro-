@@ -17,6 +17,9 @@ export default function Accueil() {
       <Link href="/connexion" className="bouton secondaire">
         Me connecter
       </Link>
+      <p className="lien-bas">
+        <Link href="/retrouver">Retrouver mon espace</Link>
+      </p>
     </main>
   );
     }
